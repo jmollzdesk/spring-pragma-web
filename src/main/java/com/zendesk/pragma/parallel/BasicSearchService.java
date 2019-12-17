@@ -23,7 +23,7 @@ public class BasicSearchService {
 	public void search(List<String> inputData) {
 		List<String> singleThreadedResults = new ArrayList<String>();
 		inputData.forEach(item -> {
-			if (item.equalsIgnoreCase("SomeComparison")) {
+			if (item.equalsIgnoreCase(new String(Helper.getTargetArr()))) {
 				singleThreadedResults.add(item);
 			}
 		});
