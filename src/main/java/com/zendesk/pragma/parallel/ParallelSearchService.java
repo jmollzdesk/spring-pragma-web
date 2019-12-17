@@ -17,10 +17,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ParallelSearchService {
+	
 	private static final Logger LOG = LoggerFactory.getLogger(ParallelSearchService.class);
 
 	public void search(List<String> inputData) {
-		List<String> parallelResults = inputData.parallelStream().filter(item -> item.equalsIgnoreCase(new String(Helper.getTargetArr()))).collect(Collectors.toList());
+		List<String> parallelResults = inputData.parallelStream().filter(item -> item.equalsIgnoreCase("SomeComparison")).collect(Collectors.toList());
 		
 		LOG.info("Completed finding all matches!");
 	}

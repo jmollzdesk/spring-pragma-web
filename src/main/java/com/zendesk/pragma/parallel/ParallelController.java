@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package com.zendesk.pragma.parallel;
 
 import java.util.ArrayList;
@@ -17,13 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController("parallel")
 public class ParallelController {
 
-    @Autowired
-    private ParallelSearchService parallelSearchService;
-
-    @Autowired
-    private BasicSearchService basicSearchService;
-
-    // TODO: Loop through a large list and compare results between for loop and parallel stream
+	@Autowired
+	private ParallelSearchService parallelSearchService;
+	
+	@Autowired
+	private BasicSearchService basicSearchService;
+	
+	// TODO: Loop through a large list and compare results between for loop and parallel stream
 
 	@GetMapping("/basic")
 	@ResponseStatus(HttpStatus.OK)
@@ -38,8 +41,6 @@ public class ParallelController {
 	}
 	
 	private List<String> getInput() {
-		// I think we can use the chrome inspect to compare the time
-		// can change the size value to coordinate the data size
-		return Helper.getLargeList(5000000);
+		return new ArrayList<String>();
 	}
 }
