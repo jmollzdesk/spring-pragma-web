@@ -36,14 +36,18 @@ public class ParallelController {
 
 	@GetMapping("/basic")
 	@ResponseStatus(HttpStatus.OK)
-	public void basic() {
+	public String basic() {
 		basicSearchService.search(getInput());
+		
+		return "invoked basic" + System.currentTimeMillis();
 	}
 	
 	@GetMapping("/stream")
 	@ResponseStatus(HttpStatus.OK)
-	public void stream() {
+	public String stream() {
 		parallelSearchService.search(getInput());
+		
+		return "invoked stream" + System.currentTimeMillis();
 	}
 	
 	private List<String> getInput() {
